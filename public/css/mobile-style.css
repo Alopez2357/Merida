@@ -1,0 +1,26 @@
+@media (max-width: 767px) {
+    .flex-mobile-box-active {
+        display: none !important;
+    }
+    .btn-display-flex-mobile-box {
+        cursor: pointer;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+    }
+}
+@media (min-width: 768px) {
+    .flex-mobile-box {
+        display: block;
+    }
+    .btn-display-flex-mobile-box {
+        display:none;
+    }
+}
+.capa{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    font-size: 22px;
+    font-weight: bold;
+}

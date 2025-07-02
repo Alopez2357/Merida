@@ -1,0 +1,24 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.app
+    container_name: merida_app
+    stdin_open: true
+    tty: true
+    volumes:
+      - /var/www/localhost/htdocs/app/node_modules
+      - .:/var/www/localhost/htdocs/app
+    ports:
+      - 18080:8080
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.3.36
+    container_name: merida_db
+    ports:
+      - 13306:3306
+    environment:
+      - MARIADB_DATABASE=test
+      - MARIADB_ROOT_PASSWORD=root
